@@ -1,0 +1,26 @@
+/*Container do menu*/
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    background-color: pink;
+    padding: 1em;
+}
+
+/*Regras da lista de links*/
+.list{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+/*Regras dos links*/
+.item{
+    margin-right: 1em;
+    color: black;
+}
+/*Regras de tamanho da imagem logo*/
+.logo{
+    width: 120px;
+}

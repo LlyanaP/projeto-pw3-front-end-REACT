@@ -8,19 +8,19 @@ const NavBar = () => {
         <nav className={style.navbar}>
             <ul className={style.list}>
                 <Link to ='/'>
-            <li className={style.item}><img className={style.logo} src="./book.png" alt="" /></li>
+            <li className={style.item}><img className={style.logo} src="logo.princess.png" alt="" /></li>
                 </Link>
 
                 <Link to = '/'>
                 <li className={style.item}>Inicio</li>
                 </Link>
 
-                <Link to = '/createBooks'>
+                <Link to = '/registerProduct'>
                 <li className={style.item}>Registrar Produto</li>
                 </Link>
 
-                <Link to = '/listBooks'>
-                <li className={style.item}>LISTAR Produto</li>
+                <Link to = '/listProduct'>
+                <li className={style.item}>Listar Produto</li>
                 </Link>
             </ul>
         </nav>
