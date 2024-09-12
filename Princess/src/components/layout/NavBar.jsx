@@ -22,6 +22,10 @@ const NavBar = () => {
                 <Link to = '/listProduct'>
                 <li className={style.item}>Listar Produto</li>
                 </Link>
+
+                <Link to = '/avaliarProduto'>
+                <li className={style.item}>Avaliar Produto</li>    
+                </Link>
             </ul>
         </nav>
             <Outlet/>

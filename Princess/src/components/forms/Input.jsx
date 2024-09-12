@@ -1,6 +1,6 @@
 import style from './Input.module.css'
 
-const Input = ({text,placeHolder,type,name}) => {
+const Input = ({text,placeHolder,type,name, readOnly }) => {
     return(
         <div className={style.register}>
             <label htmlFor={name}>{text}</label>
@@ -9,6 +9,7 @@ const Input = ({text,placeHolder,type,name}) => {
                 name={name}
                 id={name}
                 placeHolder ={placeHolder}
+                readOnly = {readOnly}
 
             />
         

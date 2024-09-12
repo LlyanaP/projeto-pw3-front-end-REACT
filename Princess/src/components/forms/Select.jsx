@@ -1,11 +1,11 @@
 import style from './Select.module.css'
 
-const Select = ({type, text, name}) => {
+const Select = ({type, text, name, disabled  }) => {
     return(
         <div className={style.select}>
             <label htmlFor={name}>{text}</label>
 
-            <select name={name} id={name}>
+            <select name={name} id={name} disabled={disabled }>
                 <option>Selecione o nicho</option>
                 <option>Cabelo</option>
                 <option>SkinCare</option>

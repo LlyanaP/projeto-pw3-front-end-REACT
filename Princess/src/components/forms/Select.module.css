@@ -9,14 +9,15 @@
     padding: .7em;
     border-radius: 0;
     border: none;
-    color: #000154;
+    color: black;
     font-weight: bold;
 }
 
 .select select{
     width: 1000px;
-    padding: 20px;
+    padding: 10px;
     border-radius: 0;
-    border: none;
-    color: #7B7B7B;
+    
+    /* border: none; */
+    color: purple;
 }

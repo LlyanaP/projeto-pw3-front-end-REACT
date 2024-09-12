@@ -25,6 +25,13 @@ const RegisterProduct = () => {
                     placeHolder= "Digite a marca do produto"
                     text = "Marca"
                 />
+
+                <Input
+                    type="text"
+                    name="txt_ean"
+                    placeHolder="EAN é um código de barras composto por 13 dígitos para identificar individualmente um objeto ou produto."
+                    text="Digite o EAN do produto"
+                />
                 
                 <Select
                     name='Nicho'

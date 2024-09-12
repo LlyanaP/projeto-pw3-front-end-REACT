@@ -6,4 +6,7 @@
     justify-content: space-between;
     margin: 0 auto;
     flex-wrap: wrap;
+    background-color: #caf0f8;
+    align-items: center;
+    
 }

@@ -1,12 +1,14 @@
-/*Container do menu*/
+
 .navbar{
     display: flex;
     justify-content: space-between;
     background-color: pink;
     padding: 1em;
+    display: inline-block
+    
 }
 
-/*Regras da lista de links*/
+
 .list{
     display: flex;
     list-style: none;
@@ -15,12 +17,15 @@
     
 }
 
-/*Regras dos links*/
+
 .item{
     margin-right: 1em;
     color: black;
+    font-weight: bold;
+    padding: .7em;
+    border-radius: 0;
 }
-/*Regras de tamanho da imagem logo*/
+
 .logo{
-    width: 120px;
+    width: 300px;
 }
