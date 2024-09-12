@@ -1,13 +1,10 @@
-import style from './Button.module.css'
-
-const Button = ({rotulo}) => {
+import styles from "./Button.module.css"
+function Button({rotulo}){
     return(
-    <div className={style.button}>
-
-        <button>{rotulo}</button>
-
-    </div>
+        <div className={styles.button}>
+            <button>{rotulo}</button>
+        </div>
     )
 }
 
-export default button
+export default Button

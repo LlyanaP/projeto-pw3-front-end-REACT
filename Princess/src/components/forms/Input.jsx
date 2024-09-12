@@ -4,14 +4,15 @@ const Input = ({text,placeHolder,type,name}) => {
     return(
         <div className={style.register}>
             <label htmlFor={name}>{text}</label>
-            <input>
+            <input
                 type ={type}
                 name={name}
                 id={name}
                 placeHolder ={placeHolder}
 
-            </input>
+            />
         
         </div>
     )
 }
+export default Input
