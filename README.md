@@ -1,6 +1,7 @@
 # projeto-pw3-front-end-REACT
+
 # Nome do Site
-<h1 textAlign="center"> Princess </h1>
+Princess
 
 # Descrição
 Princess permite que os usuários busquem e compartilhem experiências sobre diversos produtos. 
@@ -10,7 +11,7 @@ Visamos facilitar a troca de informações e recomendações, ajudando os consum
 https://github.com/LlyanaP/projeto-pw3-front-end-REACT.git
 
 # Instalação
-     Ao clorar repositorio é necessario da um:
-        - npm install "Intala o NodeModules
+     Ao clonar repositório é necessario a instalação destes pacotes:
+        - npm install "Instala o Node_Modules"
 
         - npm install react-router-dom "Nele esta os componentes que utilizamos no sistema de navegação" 
