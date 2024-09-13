@@ -9,16 +9,17 @@
 .home h1{
     font-size: 2.5em;
     margin-bottom: .5em;
+    color:#240046
 }
-.home h1 span{
+.home h2{
     color: #fb6f92;
     padding: 0 .2em;
-    background-color: #bde0fe;
+    
 
 }
 .home p{
     margin-bottom: 1.5em;
-    color: #343a40;
+    color: #240046;
 
 }
 .home img{

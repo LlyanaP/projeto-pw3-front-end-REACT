@@ -1,8 +1,8 @@
 import styles from "./Button.module.css"
 function Button({rotulo}){
     return(
-        <div className={styles.button}>
-            <button>{rotulo}</button>
+        <div >
+            <button className={styles.button}>{rotulo}</button>
         </div>
     )
 }

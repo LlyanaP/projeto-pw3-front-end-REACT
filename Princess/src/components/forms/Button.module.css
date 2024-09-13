@@ -1,8 +1,8 @@
-button{
-    background-color: aquamarine;
+.button{
+    background-color: #e7c6ff;
     color: #ff0054;
     padding: 0 45px;
-    border: 2px solid purple;
+    border: 2px solid #fff;
     border-radius: 10px;
     height: 50px;
     text-transform: uppercase;
@@ -13,5 +13,5 @@ button{
 }
 
 button:hover{
-    background-color: #90e0ef;
+    background-color: #48cae4;
 }
