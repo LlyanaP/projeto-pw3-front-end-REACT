@@ -16,6 +16,40 @@ const[nicho, setNicho] = useState([])
 
 const[avalie, setAvalie] = useState([])
 
+const [cadastroAvaliacao, setCadastroAvaliacao] = useState([])
+
+function handlerChangeCadProduto(event){
+    setCadastroAvaliacao({...cadastroAvaliacao,[event.target.name]:event.target.value});
+    console.log(cadastroAvaliacao)
+}
+function registerProduct(cadastroAvaliacao){
+    fetch('http://localhost:5000/cadastroAvalie',{
+        method:'POST',
+        mode:'cors',
+        headers:{
+            'Content-Type':'application/json',
+            'Access-Control-Allow-Origin':'*',
+            'Access-Control-Allow-Headers':'*'
+        },
+        body:JSON.stringify(cadastroAvaliacao)
+    })
+    .then(
+        (resp)=>resp.json()
+    )
+    .then(
+        (data)=>{
+            console.log(data);
+        }
+    )
+    .catch(
+        (err)=>{console.log(err)}
+    )
+}
+    function submit(event){
+        event.preventDefault();
+        registerProduct(cadastroAvaliacao);
+    }
+
     useEffect(() => {
         fetch('http://localhost:5000/listagemDeNicho',{
             method: 'GET',
@@ -61,18 +95,20 @@ const[avalie, setAvalie] = useState([])
     return(
         <section className={style.register}>
             <h1>Registre seu produto</h1>
-
+        <form onSubmit={submit}>
                 <Input
                     type="text"
                     name="produto"
                     placeHolder= "Digite o nome do seu produto"
                     text = "Nome do Produto"
+                    handlerChangeCadProduto={handlerChangeCadProduto}
                 />
                 <Input
                     type="text"
                     name="marca"
                     placeHolder= "Digite a marca do produto"
                     text = "Marca"
+                    handlerChangeCadProduto={handlerChangeCadProduto}
                 />
 
                 <Input
@@ -80,6 +116,7 @@ const[avalie, setAvalie] = useState([])
                     name="ean"
                     placeHolder="EAN é um código de barras composto por 13 dígitos para identificar individualmente um objeto ou produto."
                     text="Digite o EAN do produto"
+                    handlerChangeCadProduto={handlerChangeCadProduto}
                 />
                 
                 <Select
@@ -92,12 +129,14 @@ const[avalie, setAvalie] = useState([])
                     name="utilizacaoCorreta"
                     placeHolder="Como a industria indica utilizar este produto"
                     text="Utilização da industria"
+                    handlerChangeCadProduto={handlerChangeCadProduto}
                 />
                 <Input
                     type='text'
                     name='usoPessoal'
                     placeHolder='Maneira que foi utilizado por sua pessoa'
                     text='Utilização pessoal'
+                    handlerChangeCadProduto={handlerChangeCadProduto}
                 />
 
                 <Input
@@ -105,6 +144,7 @@ const[avalie, setAvalie] = useState([])
                     name="dica"
                     placeHolder="Diferencial que você considera que melhorou sua experiencia"
                     text="Dica"
+                    handlerChangeCadProduto={handlerChangeCadProduto}
                 />
                 <SelectAvaliar
                     name="Avaliação"
@@ -115,6 +155,7 @@ const[avalie, setAvalie] = useState([])
                 <Button
                     rotulo="Cadastrar e Avaliar Produto"
                 />
+            </form>    
         </section>
     )
 }

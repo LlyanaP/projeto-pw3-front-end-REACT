@@ -5,7 +5,7 @@ import ListProduct from './components/pages/ListProduct'
 import RegisterProduct from './components/pages/RegisterProduct'
 import NavBar from './components/layout/NavBar'
 import Container from "./components/layout/Container"
-import AvaliarProduto from './components/pages/AvaliarProduto'
+// import AvaliarProduto from './components/pages/AvaliarProduto'
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
         <Route path='/' element = {<Home/>}/>
         <Route path='/listProduct' element = {<ListProduct/>}/>
         <Route path='/registerProduct' element = {<RegisterProduct/>}/> 
-        <Route path='/avaliarProduto' element =  {<AvaliarProduto/>}/>
+        {/* <Route path='/avaliarProduto' element =  {<AvaliarProduto/>}/> */}
         </Route>
       </Routes>
     </Container>
