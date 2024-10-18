@@ -23,7 +23,7 @@ function handlerChangeCadProduto(event){
     console.log(cadastroAvaliacao)
 }
 function registerProduct(cadastroAvaliacao){
-    fetch('http://localhost:5000/cadastroAvalie',{
+    fetch('http://localhost:5001/cadastroAvalie',{
         method:'POST',
         mode:'cors',
         headers:{
@@ -51,7 +51,7 @@ function registerProduct(cadastroAvaliacao){
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/listagemDeNicho',{
+        fetch('http://localhost:5001/listagemDeNicho',{
             method: 'GET',
             headers:{
                'Content-Type':'application/jason',
@@ -72,7 +72,7 @@ function registerProduct(cadastroAvaliacao){
     );
 
     useEffect(()=>{
-        fetch('http://localhost:5000/Avalie',{
+        fetch('http://localhost:5001/avalie',{
             method:'GET',
             headers:{
                 'Content-Type':'application/jason',
