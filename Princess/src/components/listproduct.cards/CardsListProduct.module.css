@@ -1,0 +1,23 @@
+.bookCard{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: max-content;
+    border-radius: 5px;
+    background-color: #DEDEDE;
+    border: 1px solid #CCC;
+    font-family: Helvetica;
+}
+
+.produto{
+    font-size: 12px;
+}
+
+.ean{
+    font-size: 10px;    
+}
+
+.princess{
+    width: 90px;
+    border-radius: 5px;
+}

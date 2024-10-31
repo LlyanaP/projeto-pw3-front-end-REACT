@@ -1,17 +1,18 @@
 import style from './Select.module.css'
 
-const Select = ({type, text, name, disabled, options  }) => {
+const Select = ({type, text, name, disabled, options= [], handleChangeCategory  }) => {
     return(
         <div className={style.select}>
             <label htmlFor={name}>{text}</label>
 
-            <select name={name} id={name} disabled={disabled}>
+            <select name={name} id={name} disabled={disabled} onChange={handleChangeCategory}>
                 <option>Selecione o nicho</option>
 
                 {
-                    options.map((option)=>{
-                        return<option>{option.nome_categoria_nicho}</option>
-                    })
+                    Array.isArray(options) && options.map((option)=>{
+                        //    console.log( option.cod_categoria_nicho + ' - ' + option.nome_categoria_nicho)
+                        return<option value={option.cod_categoria_nicho} key={option.cod_categoria_nicho}>{option.nome_categoria_nicho}</option>
+                    }) 
                 }
 
                 {/* <option>Cabelo</option>
@@ -24,27 +25,28 @@ const Select = ({type, text, name, disabled, options  }) => {
     )
 }
 
-const SelectAvaliar = ({type, text,name, options}) => {
+const SelectAvaliar = ({type, text,name, options= [], handleChangeAvalie }) => {
     return(
         <div className={style.select}>
             <label htmlFor={name}>{text}</label>
-            <select name={name} id={name}>
+            <select name={name} id={name} onChange={handleChangeAvalie}>
                 <option>Avalie o produto</option>
 
                 {
-                    options.map((option)=>{
-                        return<option>{option.nome_avalie}</option>
-                    })
+                    Array.isArray(options) && options.map((option)=>{
+                        // console.log( option.cod_avalie + ' - ' + option.nome_avalie)
+                        return<option value={option.cod_avalie} key={option.cod_avalie}>{option.nome_avalie}</option>
+                    }) 
                 }
 
 
-                {/* <option>💖💖💖💖💖</option>
-                <option>💖💖💖💖</option> 
-                <option>💖💖💖</option> 
-                <option>💖💖</option> 
-                <option>💖</option>      */}
-            </select>  
-        </div>
+//                 {/* <option>💖💖💖💖💖</option>
+//                 <option>💖💖💖💖</option> 
+//                 <option>💖💖💖</option> 
+//                 <option>💖💖</option> 
+//                 <option>💖</option>      */}
+//             </select>  
+//         </div>
     )
 }
 export {Select, SelectAvaliar}

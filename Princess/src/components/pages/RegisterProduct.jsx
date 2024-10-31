@@ -12,11 +12,11 @@ import {Select, SelectAvaliar} from '../forms/Select'
 
 const RegisterProduct = () => {
 
-const[nicho, setNicho] = useState([])
+const[nicho, setNicho] = useState([]);
 
-const[avalie, setAvalie] = useState([])
+const[avalie, setAvalie] = useState([]);
 
-const [cadastroAvaliacao, setCadastroAvaliacao] = useState([])
+const [cadastroAvaliacao, setCadastroAvaliacao] = useState({})
 
 function handlerChangeCadProduto(event){
     setCadastroAvaliacao({...cadastroAvaliacao,[event.target.name]:event.target.value});
@@ -47,14 +47,20 @@ function registerProduct(cadastroAvaliacao){
 }
     function submit(event){
         event.preventDefault();
+        console.log("Dados a serem enviados:", cadastroAvaliacao); // Verifique o que está sendo enviado
         registerProduct(cadastroAvaliacao);
+    }
+
+    function handleChangeCategory(event){
+        setCadastroAvaliacao({...cadastroAvaliacao, cod_categoria_nicho: event.target.value});
+        console.log(cadastroAvaliacao);
     }
 
     useEffect(() => {
         fetch('http://localhost:5001/listagemDeNicho',{
             method: 'GET',
             headers:{
-               'Content-Type':'application/jason',
+               'Content-Type':'application/json',
                 'Acess-Control-Allow-Origin':'*',
                 "Acess-Control-Allow-Headers":'*', 
             }
@@ -62,8 +68,8 @@ function registerProduct(cadastroAvaliacao){
             (resp) => resp.json()
         ).then(
             (data) => {
-                console.log('DATA' + data.data.nome_categoria_nicho)
-                setNicho(data.data)
+                console.log("Dados de Nicho:", data)
+                setNicho(data.data|| []);
             }
         ).catch(
             (error) =>{console.log(error)}
@@ -71,11 +77,16 @@ function registerProduct(cadastroAvaliacao){
     },[]
     );
 
+    function handleChangeAvalie(event){
+        setCadastroAvaliacao({...cadastroAvaliacao, cod_avalie: event.target.value});
+        console.log(cadastroAvaliacao);
+    }
+
     useEffect(()=>{
         fetch('http://localhost:5001/avalie',{
             method:'GET',
             headers:{
-                'Content-Type':'application/jason',
+                'Content-Type':'application/json',
                 'Acess-Control-Allow-Origin':'*',
                 "Acess-Control-Allow-Headers":'*', 
             }
@@ -83,8 +94,8 @@ function registerProduct(cadastroAvaliacao){
             (resp) => resp.json()
         ).then(
             (data) => {
-                console.log('DATA' + data.data.nome_avalie)
-                setAvalie(data.data)
+                console.log("Dados de avalie:", data)
+                setAvalie(data.data|| []);
             }
         ).catch(
             (error)=>{console.log(error)}
@@ -120,9 +131,10 @@ function registerProduct(cadastroAvaliacao){
                 />
                 
                 <Select
-                    name='Nicho'
+                    name='nicho_id'
                     text='Escolha o nicho do produto'
                     options={nicho}
+                    handleChangeCategory={handleChangeCategory}
                 />
                 <Input
                     type="text"
@@ -147,9 +159,10 @@ function registerProduct(cadastroAvaliacao){
                     handlerChangeCadProduto={handlerChangeCadProduto}
                 />
                 <SelectAvaliar
-                    name="Avaliação"
+                    name="avalie_id"
                     text="Avalie o produto"
                     options={avalie}
+                    handleChangeAvalie={handleChangeAvalie}
                 />
                 <h2>Contribua adicionando um novo produto e o avaliando </h2>
                 <Button
