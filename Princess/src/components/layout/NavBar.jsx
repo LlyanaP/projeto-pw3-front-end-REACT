@@ -7,9 +7,9 @@ const NavBar = () => {
         <>
         <nav className={style.navbar}>
             <ul className={style.list}>
-                {/* <Link to ='/'>
-            <li className={style.item}><img className={style.logo} src='../layout/logo.princess.png' alt="" /></li>
-                </Link> */}
+                <Link to ='/'>
+                <li className={style.item}><img className={style.logo} src="logo.princess.png" alt="" /></li>
+                </Link>
 
                 <Link to = '/'>
                 <li className={style.item}>Inicio</li>

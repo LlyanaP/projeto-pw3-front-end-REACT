@@ -10,7 +10,7 @@ import Container from '../layout/Container.jsx';
 
 import ContainerList from "../layout/ContainerList.jsx";
 
-import princess from '../layout/logo.princess.png';
+import avalie from "../forms/avalie.jpg"
 
 const ListProduct = () =>{
 
@@ -50,8 +50,9 @@ const ListProduct = () =>{
                             <CardList
                                 produto={listProduct.produto}
                                 ean={listProduct.ean}
-                                ima={princess}
-                        
+                                ima={avalie}
+                                cod_cadastro_avalia={listProduct.cod_cadastro_avalia}
+                                key={listProduct.cod_cadastro_avalia}
                             />
                         ))
                     }

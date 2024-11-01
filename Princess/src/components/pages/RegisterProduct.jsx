@@ -70,9 +70,12 @@ function registerProduct(cadastroAvaliacao){
             (data) => {
                 console.log("Dados de Nicho:", data)
                 setNicho(data.data|| []);
+                // alert("Cadastrado com Sucesso")
             }
         ).catch(
-            (error) =>{console.log(error)}
+            (error) =>{console.log(error)
+                // alert("Ocorreu um erro ao cadastrar categorias")
+            }
         )
     },[]
     );

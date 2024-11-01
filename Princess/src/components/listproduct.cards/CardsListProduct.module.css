@@ -4,8 +4,8 @@
     align-items: center;
     width: max-content;
     border-radius: 5px;
-    background-color: #DEDEDE;
-    border: 1px solid #CCC;
+    background-color: palevioletred;
+    border: 1px solid purple;
     font-family: Helvetica;
 }
 
@@ -17,7 +17,7 @@
     font-size: 10px;    
 }
 
-.princess{
+.avalie{
     width: 90px;
     border-radius: 5px;
 }
