@@ -52,6 +52,8 @@ const DetalheList = () => {
                     />
                     <Button 
                         label='EXCLUIR'
+                        router='/delete/'
+                        cod_cadastro_avalia={cadastroAvaliacao.cod_cadastro_avalia}
                     />
                 </div>
             </div>
