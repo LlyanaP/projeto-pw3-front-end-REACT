@@ -2,11 +2,11 @@ import style from '../listproduct.cards/CardsListProduct.module.css';
 
 import Button from './ButtonList.jsx';
 
-const cardList = ({produto, ean, imagem, cod_cadastro_avalia}) => {
+const cardList = ({produto, marca, imagem, cod_cadastro_avalia}) => {
     return(
-        <div className={style.bookCard}>
-            <h3 className={style.titulo}>{produto}</h3>
-            <p className={style.autor}>{ean}</p>
+        <div className={style.container}>
+            <h3 className={style.produto}>{produto}</h3>
+            <p className={style.marca}>{marca}</p>
             <img className={style.avalie} src={imagem} alt={produto} title={{produto}} />
         
             <div>

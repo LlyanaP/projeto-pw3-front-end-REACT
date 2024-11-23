@@ -2,15 +2,15 @@ import React from "react";
 
 import style from './ListProduct.module.css'
 
-import { useState, useEffect } from "react";
-
 import CardList from '../listproduct.cards/CardsListProduct.jsx'
 
 import Container from '../layout/Container.jsx';
 
 import ContainerList from "../layout/ContainerList.jsx";
 
-import avalie from "../forms/avalie.jpg"
+import avalie from "../../assets/avalie.jpg"
+
+import { useState, useEffect } from "react";
 
 const ListProduct = () =>{
 
@@ -33,35 +33,27 @@ const ListProduct = () =>{
                     console.log('STATE: ' + listProduct);
                 })
                 .catch((err)=>{console.log(err)});
-    
         }, []);
 
         return(
             <Container>
-    
-            <section className={style.list_book_container}>
-                
+            <section className={style.container}>
                 <h1>Lista de Avaliação</h1>
-    
                 <ContainerList>
                     {
                         listProduct.map((listProduct)=>(
-                            // console.log(book.nome_livro)
                             <CardList
                                 produto={listProduct.produto}
-                                ean={listProduct.ean}
-                                ima={avalie}
+                                marca={listProduct.marca}
+                                imagem={avalie}
                                 cod_cadastro_avalia={listProduct.cod_cadastro_avalia}
                                 key={listProduct.cod_cadastro_avalia}
                             />
                         ))
                     }
                 </ContainerList>
-    
             </section>
-    
         </Container>
         )
     }
-    
     export default ListProduct
