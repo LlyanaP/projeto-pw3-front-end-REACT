@@ -49,6 +49,8 @@ const DetalheList = () => {
                 <div className={style.container_buttons}>
                     <Button 
                         label='EDITAR'
+                        router='/edit/'
+                        cod_cadastro_avalia={cadastroAvaliacao.cod_cadastro_avalia}
                     />
                     <Button 
                         label='EXCLUIR'

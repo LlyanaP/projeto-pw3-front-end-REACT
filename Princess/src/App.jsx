@@ -8,6 +8,7 @@ import Container from "./components/layout/Container"
 // import AvaliarProduto from './components/pages/AvaliarProduto'
 import DetalheList from './components/listproduct.cards/DetalheList.jsx'
 import Delete from "./components/listproduct.cards/Delete.jsx"
+import Edit from "./components/listproduct.cards/Edit.jsx"
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         {/* <Route path='/avaliarProduto' element =  {<AvaliarProduto/>}/> */}
         <Route path="detalheList/:cod_cadastro_avalia" element={<DetalheList/>} />
         <Route path="delete/:cod_cadastro_avalia" element={<Delete/>}/>
+        <Route path="edit/:cod_cadastro_avalia" element={<Edit/>}/>
         </Route>
       </Routes>
     </Container>
